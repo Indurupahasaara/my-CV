@@ -1,124 +1,281 @@
+/* CSS Variables for Theming */
+:root {
+    --primary-color: #2c3e50;    /* Navy Blue */
+    --secondary-color: #34495e;  /* Slate */
+    --accent-color: #e67e22;     /* Muted Orange/Gold for highlights */
+    --text-color: #333333;
+    --bg-color: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px 10px;
-    text-align: center;
+
+/* Header Section */
+.main-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 60px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.container {
-    /* width: 90%; */
-    width: 2,480px;
-    height: 3,508[x];
-    max-width: 800px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.profile-img-container {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
-h1, h2 {
-    margin-top: 0;
-}
-.section {
-    margin-bottom: 20px;
-}
-.section h2 {
-    color: #4CAF50;
-    border-bottom: 2px solid #4CAF50;
-    padding-bottom: 5px;
-}
-ul {
-    padding-left: 20px;
-}
-li {
-    margin-bottom: 10px;
-}
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    position: fixed;
-    bottom: 0;
+
+.profile-img {
     width: 100%;
-}
-
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .profile-img{
-        width: 81%;
-        height: 77%;
-        border-radius: 5%;
-    }
-}
-
-
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .profile-img{
-        width: 50%;
-        height: 100%;
-        border-radius: 5%;
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {.profile-img{
-    width: 65%;
     height: 100%;
-    border-radius: 5%;
-}}
+    object-fit: cover;
+}
 
+.name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 0;
+}
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .profile-img{
-        width: 50%;
-        height: 100%;
-        border-radius: 5%;
+.title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.contact-info i {
+    width: 25px;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+/* Main Content Layout */
+.main-content {
+    padding-bottom: 40px;
+}
+
+.section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.section:hover {
+    transform: translateY(-3px);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.section-title i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+/* Experience & Education Items */
+.experience-item, .education-item {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.experience-item:last-child, .education-item:last-child {
+    margin-bottom: 0;
+}
+
+.job-title, .education-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 600;
+}
+
+.company, .institution {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 5px 0 10px;
+}
+
+.badge {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+}
+
+/* Skills Badges */
+.skills-category h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    background-color: #e9ecef;
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.skill-badge:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.skill-badge i {
+    margin-right: 6px;
+}
+
+/* References */
+.reference-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    border: 1px solid #dee2e6;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Handling */
+@media (min-width: 768px) {
+    .contact-info span {
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+    
+    .profile-img-container {
+        margin: 0;
     }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .profile-img{
-        width: 50%;
-        height: 100%;
-        border-radius: 5%;
+@media (max-width: 767px) {
+    .name {
+        font-size: 2rem;
+    }
+    .title {
+        font-size: 1.2rem;
     }
 }
 
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Print Styles */
 @media print {
- 
-    @page{
-        size: A4;
-        margin: 2cm;
+    body {
+        background-color: white;
+    }
+    
+    .main-header {
+        background: none;
+        color: black;
+        box-shadow: none;
+        border-bottom: 1px solid #000;
+        padding: 20px 0;
+        margin-bottom: 20px;
+    }
+    
+    .name, .title, .section-title {
+        color: black !important;
     }
 
-    .header-section{
-        margin: 0%;
-        padding: 0%;
-        font-size: 12px;
-    }
-    body{
-        margin: 0%;
-        padding: 0%;
-        font-size: 12px;
+    .contact-info i {
+        color: black !important;
     }
 
-    .profile-img{
-        width: 60%;
-        height: auto;
-        border-radius: 10%;
-        margin-right: 10px;
+    .profile-img-container {
+        border-color: #ccc;
+        box-shadow: none;
     }
 
+    .section {
+        box-shadow: none;
+        padding: 0;
+        margin-bottom: 20px;
+        border: none;
+    }
+
+    .skill-badge {
+        border: 1px solid #ccc;
+        background: white;
+        color: black;
+    }
+    
+    .badge {
+        color: black;
+        border: 1px solid black;
+        background: white !important;
+    }
+
+    .main-footer {
+        display: none;
+    }
+    
+    /* Ensure no page breaks inside components */
+    .experience-item, .education-item, .section {
+        page-break-inside: avoid;
+    }
 }
